@@ -167,3 +167,27 @@ baz.foo.call(this); // this - bound to global 4.
 baz.fooToo(); // this - bound to 5.
 */
 
+/*
+function foo(a) {
+    this.a = a;
+    
+    console.log(this);
+    
+}
+
+// var bar = new foo( 2 );
+var bar = new foo( 2 ); // causes this to be bound to the foo function - new binding
+console.log( bar.a ); // 2
+
+foo(3);
+*/
+
+function foo() {
+    console.log( this );
+}
+
+new foo(); // Object
+
+foo(); // global
+
+
