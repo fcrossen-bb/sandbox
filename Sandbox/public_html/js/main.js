@@ -139,6 +139,7 @@ foo.call('whatever');                   // both the same... the first example is
 console.log(new String('whatever') );   //
 */
 
+/*
 myObj = {
     a: 'aaayyy',
     b: 'beeee',
@@ -164,3 +165,5 @@ baz.foo(); // this - bound to baz 3.
 baz.foo.call(this); // this - bound to global 4.
 
 baz.fooToo(); // this - bound to 5.
+*/
+
