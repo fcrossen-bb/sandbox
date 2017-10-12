@@ -88,6 +88,7 @@ obj.foo();
 // obj.foo.call(this);
 */
 
+/*
 function foo() {
 	console.log( this.a );
 }
@@ -106,3 +107,60 @@ var obj = {
 var a = "oops, global"; // `a` also property on global object
 
 doFoo( obj.foo ); // "oops, global"
+*/
+
+/*
+dummy = function() {};
+console.log(dummy.prototype);
+
+console.log( function(){}.prototype );
+*/
+
+/*
+var a = 'whatever';
+
+function foo() {
+    console.log(this);
+    console.log(this.a);
+}
+
+foo(); // Window and global a
+
+foo.call(a); // String object and undefined
+
+foo.apply(a);
+*/
+
+/*
+function foo() {
+    console.log(this);
+}
+foo.call('whatever');                   // both the same... the first example is 'boxing' 
+console.log(new String('whatever') );   //
+*/
+
+myObj = {
+    a: 'aaayyy',
+    b: 'beeee',
+}
+
+function foo() {
+    console.log(this);
+}
+
+foo(); // this - global 1.
+
+bar = foo.bind(myObj);
+
+bar(); // this - myObj 2. 
+
+baz = {
+    c: 'ceeee',
+    foo: foo,
+    fooToo: function() { this.foo(); }, // this bound to baz
+};
+
+baz.foo(); // this - bound to baz 3.
+baz.foo.call(this); // this - bound to global 4.
+
+baz.fooToo(); // this - bound to 5.
