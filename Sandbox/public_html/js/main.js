@@ -233,6 +233,7 @@ o.foo(); // 3
  * ES6 arrows - n goes to...
  * @see https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/
  */
+/*
 function countdown(n) {
     
     console.log('XXXXXXXX');
@@ -242,4 +243,4 @@ function countdown(n) {
   }
 }
 countdown(10);
-
+*/
