@@ -198,6 +198,7 @@ foo(); // global
 /*
  * Currying with bind...
  */
+/*
 function foo(a,b) {
 	console.log( "a:" + a + ", b:" + b );
 }
@@ -209,3 +210,20 @@ function foo(a,b) {
 
 var bar = foo.bind( null, 2 );
 bar( 3 ); // a:2, b:3
+*/
+
+/*
+ * Broken binding
+ */
+/*
+function foo() {
+	console.log( this.a );
+}
+
+var a = 2;
+var o = { a: 3, foo: foo };
+var p = { a: 4 };
+
+o.foo(); // 3
+(p.foo = o.foo)(); // 2
+*/
