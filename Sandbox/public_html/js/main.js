@@ -227,3 +227,19 @@ var p = { a: 4 };
 o.foo(); // 3
 (p.foo = o.foo)(); // 2
 */
+
+
+/*
+ * ES6 arrows - n goes to...
+ * @see https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/
+ */
+function countdown(n) {
+    
+    console.log('XXXXXXXX');
+    
+  while (n --> 0) {  // "n goes to zero"
+      console.log(n);
+  }
+}
+countdown(10);
+
